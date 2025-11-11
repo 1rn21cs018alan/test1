@@ -1,5 +1,17 @@
 {
   "git": {
     "deploymentEnabled": false
-  }
+  },
+  "builds": [
+            {
+              "src": "api/main.py",
+              "use": "@vercel/python"
+            }
+          ],
+          "routes": [
+            {
+              "src": "/api/(.*)",
+              "dest": "api/main.py"
+            }
+          ]
 }
